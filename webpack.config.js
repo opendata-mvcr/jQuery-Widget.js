@@ -28,19 +28,41 @@ module.exports = [
       path: path.join(__dirname, '/build'),
       libraryTarget: 'window',
     },
+    // The following polyfills for Node.js are needed to make them work in the browser.
+    // Make sure these are listed in the (dev) dependencies.
+    resolve: {
+      fallback: {
+        stream: require.resolve('stream-browserify'),
+      },
+    },
     plugins: [
       new webpack.ProvidePlugin({
         jQuery: path.join(__dirname, '/deps/jquery-2.1.0.js'),
+      }),
+      new webpack.DefinePlugin({
+        'process.env.NODE_DEBUG': false,
       }),
     ],
     module: {
       rules: [
         {
           type: 'javascript/auto',
-          test: /\.(json|html)$/,
+          test: /actor-init-sparql\/package\.json$/,
           use: [
-            { loader: 'file-loader', options: { name: '[name].[ext]' } },
+            { loader: 'file-loader', options: { name: 'scripts/[name].[ext]' } },
           ],
+        },
+        {
+          type: 'javascript/auto',
+          test: /\.html$/,
+          use: [
+            { loader: 'file-loader', options: { name: 'scripts/[name].[ext]' } },
+          ],
+        },
+        {
+          test: /\.js$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
         },
         {
           test: /\.(jpg|png|gif|svg|ico)$/,
@@ -81,8 +103,20 @@ module.exports = [
         },
       ],
     },
+    // The following polyfills for Node.js are needed to make them work in the browser.
+    // Make sure these are listed in the (dev) dependencies.
+    resolve: {
+      fallback: {
+        stream: require.resolve('stream-browserify'),
+        buffer: require.resolve('buffer'),
+        util: require.resolve('util'),
+      },
+    },
     plugins: [
       new webpack.ProgressPlugin(),
+      new webpack.DefinePlugin({
+        'process.env.NODE_DEBUG': false,
+      }),
     ],
   },
 ];
