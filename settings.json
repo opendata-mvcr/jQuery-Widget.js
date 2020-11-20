@@ -5,60 +5,28 @@
   },
   "datasources": [
     {
+      "name": "Vývojový NKOD - LDF nad SPARQL",
+      "url": "https://dev.nkod.opendata.cz/ldf/nkod-sparql-ldf"
+    },
+    {
+      "name": "Vývojový NKOD - LDF nad HDT",
+      "url": "https://dev.nkod.opendata.cz/ldf/nkod-ldf"
+    },
+    {
+      "name": "Falešný NKOD - LDF nad SPARQL",
+      "url": "https://dev.nkod.opendata.cz/ldf/fkod-sparql-ldf"
+    },
+    {
       "name": "DBpedia 2016-04",
       "url": "https://fragments.dbpedia.org/2016-04/en"
-    },
-    {
-      "name": "Ruben Verborgh's Profile",
-      "url": "https://ruben.verborgh.org/profile/"
-    },
-    {
-      "name": "Ruben Taelman's Profile",
-      "url": "https://www.rubensworks.net/"
-    },
-    {
-      "name": "DBpedia SPARQL",
-      "url": "https://dbpedia.org/sparql"
-    },
-    {
-      "name": "DBpedia 2015-10",
-      "url": "https://fragments.dbpedia.org/2015-10/en"
-    },
-    {
-      "name": "DBpedia 2015-04",
-      "url": "https://fragments.dbpedia.org/2015/en"
-    },
-    {
-      "name": "DBpedia 2014",
-      "url": "https://fragments.dbpedia.org/2014/en"
-    },
-    {
-      "name": "Ghent University Academic Bibliography",
-      "url": "https://data.linkeddatafragments.org/ugent-biblio"
     },
     {
       "name": "Linked Open Vocabularies",
       "url": "https://data.linkeddatafragments.org/lov"
     },
     {
-      "name": "Virtual International Authority File (VIAF)",
-      "url": "https://data.linkeddatafragments.org/viaf"
-    },
-    {
-      "name": "Harvard Library",
-      "url": "https://data.linkeddatafragments.org/harvard"
-    },
-    {
-      "name": "Between Our Worlds 2018-06",
-      "url": "https://data.betweenourworlds.org/2018-06"
-    },
-    {
       "name": "Wikidata",
       "url": "https://query.wikidata.org/bigdata/ldf"
-    },
-    {
-      "name": "SNCB",
-      "url": "https://graph.irail.be/sncb/connections"
     }
   ],
   "prefixes": {
@@ -73,11 +41,8 @@
     "dbpedia-owl": "http://dbpedia.org/ontology/",
     "dbpprop":     "http://dbpedia.org/property/",
     "wdprop":      "http://www.wikidata.org/prop/direct/",
-    "ruben":       "https://ruben.verborgh.org/profile/#",
-    "rubent":      "https://www.rubensworks.net/#",
     "schema":      "http://schema.org/",
-    "bow":         "https://betweenourworlds.org/ontology/",
-    "lc":          "http://semweb.mmlab.be/ns/linkedconnections#"
+    "dcat":        "http://www.w3.org/ns/dcat#"
   },
   "queries": "(Will be generated from the 'queries' folder by running the './queries-to-json' script.)"
 }

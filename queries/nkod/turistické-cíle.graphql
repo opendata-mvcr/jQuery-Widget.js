@@ -1,0 +1,23 @@
+# 3. URL JSON-LD souborů ke stažení podle OFN Turistické cíle
+# Datasource: https://dev.nkod.opendata.cz/ldf/*
+{
+  title @single
+  specification(_:TuristickeCile)
+  distribution(format: JSONLD) {
+     downloadURL @single
+  }
+}
+
+{
+  "@context": {
+    "TuristickeCile": "https://ofn.gov.cz/turistické-cíle/2020-07-01/",
+    "JSONLD": "http://publications.europa.eu/resource/authority/file-type/JSON_LD",
+    "Dataset": "http://www.w3.org/ns/dcat#Dataset",
+    "Distribution": "http://www.w3.org/ns/dcat#Distribution",
+    "title": { "@id": "http://purl.org/dc/terms/title", "@language": "cs"},
+    "specification": { "@id": "http://purl.org/dc/terms/conformsTo"},
+    "format": { "@id": "http://purl.org/dc/terms/format"},
+    "distribution": { "@id": "http://www.w3.org/ns/dcat#distribution", "@type": "@id" },
+    "downloadURL": { "@id": "http://www.w3.org/ns/dcat#downloadURL"}
+  }
+}

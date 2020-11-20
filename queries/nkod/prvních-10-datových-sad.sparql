@@ -1,0 +1,8 @@
+# 1. Prvních 10 datových sad a jejich jména
+# Datasource: https://dev.nkod.opendata.cz/ldf/*
+SELECT DISTINCT ?datová_sada ?název WHERE {
+  ?datová_sada a dcat:Dataset;
+          dc:title ?název .
+    FILTER(LANGMATCHES(LANG(?název), "cs"))
+}
+LIMIT 10
