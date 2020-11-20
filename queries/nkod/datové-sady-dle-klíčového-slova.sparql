@@ -1,0 +1,15 @@
+# 5. Datové sady dle klíčového slova
+# Datasource: https://dev.nkod.opendata.cz/ldf/*
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+SELECT DISTINCT ?datová_sada ?název ?downloadURL WHERE {
+  ?datová_sada a dcat:Dataset;
+    dcterms:title ?název ;
+    dcat:keyword "číselník"@cs ;
+    dcat:distribution ?distribution .
+  ?distribution a dcat:Distribution ;
+    dcat:downloadURL ?downloadURL .
+  
+  FILTER(LANGMATCHES(LANG(?název), "cs"))
+}
+LIMIT 10
